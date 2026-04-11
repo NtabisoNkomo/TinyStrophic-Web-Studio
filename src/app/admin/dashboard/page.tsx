@@ -1,4 +1,6 @@
 import { Crown, Users, FileText, CheckCircle, TrendingUp, LogOut } from "lucide-react"
+export const dynamic = "force-dynamic"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getLeads } from "@/lib/actions/leads"

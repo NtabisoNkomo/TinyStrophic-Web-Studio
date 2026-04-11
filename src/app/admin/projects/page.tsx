@@ -1,4 +1,6 @@
 import { Crown, LayoutGrid, Plus, Trash2 } from "lucide-react"
+export const dynamic = "force-dynamic"
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getProjects } from "@/lib/actions/projects"
