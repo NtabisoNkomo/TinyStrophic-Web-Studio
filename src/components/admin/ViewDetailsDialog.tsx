@@ -21,13 +21,13 @@ interface ViewDetailsDialogProps {
 export function ViewDetailsDialog({ title, subtitle, date, content, trigger }: ViewDetailsDialogProps) {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        {trigger || (
+      <DialogTrigger 
+        render={trigger || (
           <Button variant="ghost" size="icon" className="hover:bg-primary/10" title="View Details">
             <Eye className="h-4 w-4" />
           </Button>
         )}
-      </DialogTrigger>
+      />
       <DialogContent className="max-w-2xl bg-background/95 backdrop-blur-md border-border/50">
         <DialogHeader>
           <div className="flex justify-between items-start">
