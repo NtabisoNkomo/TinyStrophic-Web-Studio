@@ -15,7 +15,7 @@ interface ViewDetailsDialogProps {
   subtitle?: string
   date: string
   content: React.ReactNode
-  trigger?: React.ReactNode
+  trigger?: React.ReactElement
 }
 
 export function ViewDetailsDialog({ title, subtitle, date, content, trigger }: ViewDetailsDialogProps) {
