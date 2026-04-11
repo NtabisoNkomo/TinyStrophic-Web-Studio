@@ -24,7 +24,7 @@ export default async function Home() {
               Ready to Build Your Premium Online Presence?
             </h2>
             <p className="max-w-[700px] mx-auto opacity-90 md:text-xl">
-              Join dozens of South African businesses that have grown with Monarch Web Studio. Get a free website audit today.
+              Join dozens of South African businesses that have grown with Sola Web Studio. Get a free website audit today.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" variant="secondary" className="rounded-full px-10 text-lg font-bold group" render={<Link href="/estimator" />}>

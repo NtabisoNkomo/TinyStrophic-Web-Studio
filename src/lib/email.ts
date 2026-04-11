@@ -16,8 +16,8 @@ export async function sendAdminNotification(subject: string, htmlBody: string) {
     );
 
     const info = await transporter.sendMail({
-      from: process.env.EMAIL_FROM || '"Monarch Web Studio" <noreply@monarchwebstudio.co.za>',
-      to: process.env.ADMIN_EMAIL || 'admin@monarchwebstudio.co.za', // Admin's email
+      from: process.env.EMAIL_FROM || '"Sola Web Studio" <noreply@solawebstudio.co.za>',
+      to: process.env.ADMIN_EMAIL || 'admin@solawebstudio.co.za', // Admin's email
       subject: subject,
       html: htmlBody,
     });

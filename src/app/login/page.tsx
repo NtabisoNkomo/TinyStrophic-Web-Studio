@@ -3,7 +3,7 @@
 import * as React from "react"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
-import { Crown, Lock, Mail, ArrowRight } from "lucide-react"
+import { Sun, Lock, Mail, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
@@ -48,11 +48,11 @@ export default function LoginPage() {
       <Card className="w-full max-w-md bg-white/[0.03] border-white/10 backdrop-blur-xl shadow-2xl relative z-10">
         <CardHeader className="text-center space-y-4 pt-10">
           <div className="mx-auto w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center border border-primary/30 transform rotate-12">
-            <Crown className="w-8 h-8 text-primary -rotate-12" />
+            <Sun className="w-8 h-8 text-primary -rotate-12" />
           </div>
           <div className="space-y-2">
-            <CardTitle className="text-3xl font-bold font-outfit uppercase tracking-tighter">Monarch Admin</CardTitle>
-            <CardDescription className="text-muted-foreground">Enter your credentials to access the throne.</CardDescription>
+            <CardTitle className="text-3xl font-bold font-outfit uppercase tracking-tighter">Sola Admin</CardTitle>
+            <CardDescription className="text-muted-foreground">Enter your credentials to access the console.</CardDescription>
           </div>
         </CardHeader>
         <CardContent className="p-8">
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="email"
-                  placeholder="admin@monarchwebstudio.co.za"
+                  placeholder="admin@solawebstudio.co.za"
                   className="pl-10 bg-white/5 border-white/10 focus:border-primary/50 transition-colors py-6 rounded-xl"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +105,7 @@ export default function LoginPage() {
           <p className="mt-8 text-center text-xs text-muted-foreground">
             Protected Console. Authorized access only.
             <br />
-            © 2024 Monarch Web Studio
+            © 2024 Sola Web Studio
           </p>
         </CardContent>
       </Card>

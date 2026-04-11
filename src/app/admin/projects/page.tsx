@@ -1,4 +1,4 @@
-import { Crown, LayoutGrid, Plus, Trash2 } from "lucide-react"
+import { Sun, LayoutGrid, Plus, Trash2 } from "lucide-react"
 export const dynamic = "force-dynamic"
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
@@ -15,8 +15,8 @@ export default async function AdminProjects() {
       <header className="bg-background border-b border-border p-4 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Crown className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold font-outfit uppercase">Monarch Admin</span>
+            <Sun className="h-6 w-6 text-primary" />
+            <span className="text-xl font-bold font-outfit uppercase">Sola Admin</span>
           </div>
           <div className="flex items-center space-x-4">
             <Button variant="ghost" className="text-sm" render={<Link href="/admin/dashboard">Dashboard</Link>} />

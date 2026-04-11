@@ -48,7 +48,7 @@ export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-[800px] text-muted-foreground md:text-xl lg:text-2xl"
           >
-            Monarch Web Studio creates high-converting, premium digital experiences for South African small-to-medium businesses. Establish your presence, engage your audience, and scale your growth.
+            Sola Web Studio creates high-converting, premium digital experiences for South African small-to-medium businesses. Establish your presence, engage your audience, and scale your growth.
           </motion.p>
 
           <motion.div

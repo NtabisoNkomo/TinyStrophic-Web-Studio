@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, Crown } from "lucide-react"
+import { Menu, Crown, Sun } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
@@ -31,9 +31,9 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <Crown className="h-8 w-8 text-primary transition-transform hover:scale-110" />
+          <Sun className="h-8 w-8 text-primary transition-transform hover:scale-110" />
           <span className="text-2xl font-bold tracking-tighter text-foreground font-outfit">
-            MONARCH<span className="text-primary">.</span>
+            SOLA<span className="text-primary">.</span>
           </span>
         </Link>
 
@@ -72,7 +72,7 @@ export function Navbar() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <SheetHeader>
                 <SheetTitle className="text-left font-outfit text-2xl font-bold">
-                  MONARCH<span className="text-primary">.</span>
+                  SOLA<span className="text-primary">.</span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-8">

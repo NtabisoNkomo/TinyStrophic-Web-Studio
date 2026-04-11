@@ -37,11 +37,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           console.log("User found in DB:", user ? "YES" : "NO")
           console.log("Password length received:", (credentials.password as string).length)
 
-          if (user && credentials.password === "monarch-admin-2024") {
+          if (user && credentials.password === "sola-admin-2026") {
             console.log("Password verified for:", user.email)
             return {
               id: user.id,
-              name: user.name ?? "Monarch Admin",
+              name: user.name ?? "Sola Admin",
               email: user.email,
               role: user.role ?? "ADMIN",
             }

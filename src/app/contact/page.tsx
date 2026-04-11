@@ -75,7 +75,7 @@ function ContactContent() {
               <Send className="h-8 w-8 text-primary" />
             </div>
             <h4 className="text-2xl font-bold font-outfit">Message Received!</h4>
-            <p className="text-muted-foreground">Thank you for reaching out. A Monarch specialist will contact you within 24 hours.</p>
+            <p className="text-muted-foreground">Thank you for reaching out. A Sola specialist will contact you within 24 hours.</p>
             <Button onClick={() => setIsSuccess(false)} variant="outline" className="rounded-full">Send Another Message</Button>
           </div>
         ) : (
@@ -139,7 +139,7 @@ function ContactContent() {
       <div className="space-y-12">
         <div className="grid grid-cols-1 gap-6">
           {[
-            { title: "Direct Email", value: "hello@monarchwebstudio.co.za", icon: Mail },
+            { title: "Direct Email", value: "hello@solawebstudio.co.za", icon: Mail },
             { title: "Phone Support", value: "+27 12 345 6789", icon: Phone },
             { title: "Main Studio", value: "Johannesburg, South Africa", icon: MapPin },
           ].map((item, i) => (

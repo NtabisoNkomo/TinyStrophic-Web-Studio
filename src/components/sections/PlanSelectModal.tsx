@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { X, Send, Calculator, MessageSquare, Check, Crown } from "lucide-react"
+import { X, Send, Calculator, MessageSquare, Check, Sun } from "lucide-react"
 import { submitLead } from "@/lib/actions/leads"
 import { toast } from "sonner"
 
@@ -78,7 +78,7 @@ export function PlanSelectModal({ planName, isOpen, onClose }: PlanSelectModalPr
             <X className="h-5 w-5" />
           </button>
           <div className="mx-auto w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center border border-primary/30 mb-4">
-            <Crown className="h-7 w-7 text-primary" />
+            <Sun className="h-7 w-7 text-primary" />
           </div>
           <h2 className="text-2xl font-bold font-outfit">{planName} Plan</h2>
           <p className="text-sm text-muted-foreground mt-1">Choose how you&apos;d like to proceed</p>
@@ -93,7 +93,7 @@ export function PlanSelectModal({ planName, isOpen, onClose }: PlanSelectModalPr
               </div>
               <h3 className="text-xl font-bold font-outfit">Thank You!</h3>
               <p className="text-muted-foreground text-sm">
-                We&apos;ve received your interest in the <strong>{planName}</strong> plan. A Monarch specialist will reach out within 24 hours.
+                We&apos;ve received your interest in the <strong>{planName}</strong> plan. A Sola specialist will reach out within 24 hours.
               </p>
               <Button onClick={onClose} variant="outline" className="rounded-full mt-2">
                 Close
