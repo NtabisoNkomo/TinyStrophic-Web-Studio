@@ -22,21 +22,22 @@ export async function logVisit() {
 }
 
 export async function getDashboardStats() {
-  const [leadsCount, visitorsCount, activeProjectsCount, auditsCount] = await Promise.all([
+  const [leadsCount, quotesCount, visitorsCount, activeProjectsCount] = await Promise.all([
     prisma.lead.count(),
+    prisma.quote.count(),
     prisma.visitor.count(),
     prisma.project.count(),
-    prisma.quote.count({ where: { services: { contains: "SEO" } } }) // Example logic
   ])
 
   let conversionRate = 0
   if (visitorsCount > 0) {
-    conversionRate = parseFloat(((leadsCount / visitorsCount) * 100).toFixed(1))
+    // Conversion rate = (Leads + Quotes) / Visitors
+    conversionRate = parseFloat((((leadsCount + quotesCount) / visitorsCount) * 100).toFixed(1))
   }
 
   return {
     conversionRate,
     activeProjects: activeProjectsCount,
-    totalAudits: leadsCount + auditsCount // Any quote or lead
+    totalAudits: quotesCount // Total quote requests
   }
 }

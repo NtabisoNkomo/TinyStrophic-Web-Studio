@@ -7,7 +7,16 @@ import { getProjects } from "@/lib/actions/projects"
 import Image from "next/image"
 import Link from "next/link"
 
+import { auth } from "@/auth"
+import { redirect } from "next/navigation"
+
 export default async function AdminProjects() {
+  const session = await auth()
+  
+  if (!session?.user || session.user.role !== "ADMIN") {
+    redirect("/login")
+  }
+
   const projects = await getProjects()
 
   return (

@@ -1,4 +1,4 @@
-import { Sun, Users, FileText, CheckCircle, TrendingUp, LogOut } from "lucide-react"
+import { Sun, Users, FileText, CheckCircle, TrendingUp, LogOut, MessageSquare } from "lucide-react"
 export const dynamic = "force-dynamic"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,11 +8,20 @@ import { getDashboardStats } from "@/lib/actions/analytics"
 import { LeadStatusDropdown } from "@/components/admin/LeadStatusDropdown"
 import { DashboardRefresher } from "@/components/admin/DashboardRefresher"
 import { DeleteQuoteButton } from "@/components/admin/DeleteQuoteButton"
-import { signOut } from "@/auth"
+import { DeleteLeadButton } from "@/components/admin/DeleteLeadButton"
+import { ViewDetailsDialog } from "@/components/admin/ViewDetailsDialog"
+import { auth, signOut } from "@/auth"
 import { getQuotes } from "@/lib/actions/quotes"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 export default async function AdminDashboard() {
+  const session = await auth()
+  
+  if (!session?.user || session.user.role !== "ADMIN") {
+    redirect("/login")
+  }
+
   const allLeads = await getLeads()
   const activeLeads = allLeads.filter(l => l.status !== "CLOSED")
   const closedLeads = allLeads.filter(l => l.status === "CLOSED")
@@ -26,7 +35,7 @@ export default async function AdminDashboard() {
   const stats = [
     { title: "Total Leads", value: totalLeads.toString(), icon: Users, change: `${newLeadsCount} new leads` },
     { title: "Active Projects", value: dashboardStats.activeProjects.toString(), icon: CheckCircle, change: "Live portfolio pieces" },
-    { title: "Website Audits", value: dashboardStats.totalAudits.toString(), icon: FileText, change: "Service active" },
+    { title: "Quote Requests", value: dashboardStats.totalAudits.toString(), icon: FileText, change: "Through estimator" },
     { title: "Conversion Rate", value: `${dashboardStats.conversionRate}%`, icon: TrendingUp, change: "Real-time" },
   ]
 
@@ -91,7 +100,7 @@ export default async function AdminDashboard() {
                     <th className="pb-4 font-bold">Business</th>
                     <th className="pb-4 font-bold">Date Received</th>
                     <th className="pb-4 font-bold">Status</th>
-                    <th className="pb-4 font-bold text-right">Message</th>
+                    <th className="pb-4 font-bold text-right">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
@@ -110,10 +119,36 @@ export default async function AdminDashboard() {
                       <td className="py-4">
                         <LeadStatusDropdown leadId={lead.id} currentStatus={lead.status} />
                       </td>
-                      <td className="py-4 text-right">
-                        <p className="text-sm truncate w-48 ml-auto text-muted-foreground" title={lead.message}>
-                          {lead.message}
-                        </p>
+                      <td className="py-4 text-right flex items-center justify-end space-x-1">
+                        <ViewDetailsDialog 
+                          title={lead.name}
+                          subtitle={`${lead.businessName} | ${lead.email}`}
+                          date={new Date(lead.createdAt).toLocaleString()}
+                          content={
+                            <div className="space-y-4">
+                              <div>
+                                <h4 className="text-primary font-bold mb-1 flex items-center">
+                                  <MessageSquare className="h-4 w-4 mr-2" />
+                                  User Message
+                                </h4>
+                                <p className="leading-relaxed">{lead.message}</p>
+                              </div>
+                              {lead.phone && (
+                                <div>
+                                  <h4 className="text-primary font-bold mb-1">Contact Phone</h4>
+                                  <p>{lead.phone}</p>
+                                </div>
+                              )}
+                              {lead.budget && (
+                                <div>
+                                  <h4 className="text-primary font-bold mb-1">Project Budget</h4>
+                                  <p>{lead.budget}</p>
+                                </div>
+                              )}
+                            </div>
+                          }
+                        />
+                        <DeleteLeadButton id={lead.id} />
                       </td>
                     </tr>
                   ))}
@@ -144,7 +179,7 @@ export default async function AdminDashboard() {
                     <th className="pb-4 font-bold">Business</th>
                     <th className="pb-4 font-bold">Date Received</th>
                     <th className="pb-4 font-bold">Status</th>
-                    <th className="pb-4 font-bold text-right">Message</th>
+                    <th className="pb-4 font-bold text-right">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
@@ -163,10 +198,36 @@ export default async function AdminDashboard() {
                       <td className="py-4">
                         <LeadStatusDropdown leadId={lead.id} currentStatus={lead.status} />
                       </td>
-                      <td className="py-4 text-right">
-                        <p className="text-sm truncate w-48 ml-auto text-muted-foreground" title={lead.message}>
-                          {lead.message}
-                        </p>
+                      <td className="py-4 text-right flex items-center justify-end space-x-1">
+                        <ViewDetailsDialog 
+                          title={lead.name}
+                          subtitle={`${lead.businessName} | ${lead.email}`}
+                          date={new Date(lead.createdAt).toLocaleString()}
+                          content={
+                            <div className="space-y-4">
+                              <div>
+                                <h4 className="text-primary font-bold mb-1 flex items-center">
+                                  <MessageSquare className="h-4 w-4 mr-2" />
+                                  User Message
+                                </h4>
+                                <p className="leading-relaxed">{lead.message}</p>
+                              </div>
+                              {lead.phone && (
+                                <div>
+                                  <h4 className="text-primary font-bold mb-1">Contact Phone</h4>
+                                  <p>{lead.phone}</p>
+                                </div>
+                              )}
+                              {lead.budget && (
+                                <div>
+                                  <h4 className="text-primary font-bold mb-1">Project Budget</h4>
+                                  <p>{lead.budget}</p>
+                                </div>
+                              )}
+                            </div>
+                          }
+                        />
+                        <DeleteLeadButton id={lead.id} />
                       </td>
                     </tr>
                   ))}
@@ -221,7 +282,28 @@ export default async function AdminDashboard() {
                       <td className="py-4 text-right font-bold text-primary">
                         R{quote.estimatedCost.toLocaleString()}
                       </td>
-                      <td className="py-4 text-right">
+                      <td className="py-4 text-right flex items-center justify-end space-x-1">
+                        <ViewDetailsDialog 
+                          title={quote.clientName}
+                          subtitle={quote.email}
+                          date={new Date(quote.createdAt).toLocaleString()}
+                          content={
+                            <div className="space-y-4">
+                              <div>
+                                <h4 className="text-primary font-bold mb-1 underline">Selected Services</h4>
+                                <p className="leading-relaxed">{quote.services}</p>
+                              </div>
+                              <div>
+                                <h4 className="text-primary font-bold mb-1 underline">Selected Features</h4>
+                                <p className="leading-relaxed">{quote.features}</p>
+                              </div>
+                              <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                                <h4 className="font-bold">Total Estimated Cost</h4>
+                                <p className="text-2xl font-bold text-primary">R{quote.estimatedCost.toLocaleString()}</p>
+                              </div>
+                            </div>
+                          }
+                        />
                         <DeleteQuoteButton id={quote.id} />
                       </td>
                     </tr>
