@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/prisma"
 import { sendAdminNotification } from "@/lib/email"
-import { sendZapierNotification } from "@/lib/webhooks"
+
 import { revalidatePath } from "next/cache"
 
 export async function submitQuote(data: {
@@ -32,7 +32,7 @@ export async function submitQuote(data: {
        <p><strong>Estimated Cost:</strong> R${data.estimatedCost}</p>`
     )
     
-    await sendZapierNotification('QUOTE', data)
+
     
     return { success: true, id: quote.id }
   } catch (error) {
