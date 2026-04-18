@@ -93,7 +93,7 @@ export function EstimatorWizard({ initialPlan }: { initialPlan?: string | null }
     doc.setFont("helvetica", "normal")
     doc.setFontSize(8)
     doc.setTextColor(150, 150, 150)
-    doc.text("SOLA WEB STUDIO", 14, 32)
+    doc.text("TINYSTROPHIC WEB STUDIO", 14, 32)
 
     // Date
     doc.setFontSize(8)
@@ -216,9 +216,9 @@ export function EstimatorWizard({ initialPlan }: { initialPlan?: string | null }
     doc.setFontSize(6)
     doc.setTextColor(80, 80, 80)
     doc.text("THIS DOCUMENT IS AN AUTOMATED ESTIMATION AND IS SUBJECT TO FINAL TECHNICAL REVIEW AND SPECIFIC SITE CONDITIONS.", pageWidth / 2, pageHeight - 20, { align: "center" })
-    doc.text("© " + new Date().getFullYear() + " SOLA WEB STUDIO. ALL RIGHTS RESERVED.", pageWidth / 2, pageHeight - 15, { align: "center" })
+    doc.text("© " + new Date().getFullYear() + " TINYSTROPHIC WEB STUDIO. ALL RIGHTS RESERVED.", pageWidth / 2, pageHeight - 15, { align: "center" })
 
-    doc.save("Sola_Estimate.pdf")
+    doc.save("TinyStrophic_Estimate.pdf")
   }
 
   const handleSubmit = async () => {

@@ -33,7 +33,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center space-x-2">
           <Sun className="h-8 w-8 text-primary transition-transform hover:scale-110" />
           <span className="text-2xl font-bold tracking-tighter text-foreground font-outfit">
-            SOLA<span className="text-primary">.</span>
+            TINYSTROPHIC<span className="text-primary">.</span>
           </span>
         </Link>
 
@@ -72,7 +72,7 @@ export function Navbar() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <SheetHeader>
                 <SheetTitle className="text-left font-outfit text-2xl font-bold">
-                  SOLA<span className="text-primary">.</span>
+                  TINYSTROPHIC<span className="text-primary">.</span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-8">

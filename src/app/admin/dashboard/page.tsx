@@ -47,7 +47,7 @@ export default async function AdminDashboard() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Sun className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold font-outfit uppercase">Sola Admin</span>
+            <span className="text-xl font-bold font-outfit uppercase">TinyStrophic Admin</span>
           </div>
           <div className="flex items-center space-x-4">
             <Button variant="ghost" className="text-sm" render={<Link href="/" target="_blank" />}>View Website</Button>
@@ -67,7 +67,7 @@ export default async function AdminDashboard() {
       <main className="container mx-auto px-4 py-8 space-y-8">
         <div>
           <h1 className="text-3xl font-bold font-outfit mb-2">Dashboard Overview</h1>
-          <p className="text-muted-foreground">Welcome back. Here is what&apos;s happening with Sola Web Studio projects.</p>
+          <p className="text-muted-foreground">Welcome back. Here is what&apos;s happening with TinyStrophic Web Studio projects.</p>
         </div>
 
         {/* Stats Grid */}

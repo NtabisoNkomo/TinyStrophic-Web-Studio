@@ -51,7 +51,7 @@ export default function LoginPage() {
             <Sun className="w-8 h-8 text-primary -rotate-12" />
           </div>
           <div className="space-y-2">
-            <CardTitle className="text-3xl font-bold font-outfit uppercase tracking-tighter">Sola Admin</CardTitle>
+            <CardTitle className="text-3xl font-bold font-outfit uppercase tracking-tighter">TinyStrophic Admin</CardTitle>
             <CardDescription className="text-muted-foreground">Enter your credentials to access the console.</CardDescription>
           </div>
         </CardHeader>
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="email"
-                  placeholder="admin@solawebstudio.co.za"
+                  placeholder="admin@tinystrophic.co.za"
                   className="pl-10 bg-white/5 border-white/10 focus:border-primary/50 transition-colors py-6 rounded-xl"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +105,7 @@ export default function LoginPage() {
           <p className="mt-8 text-center text-xs text-muted-foreground">
             Protected Console. Authorized access only.
             <br />
-            © 2024 Sola Web Studio
+            © 2024 TinyStrophic Web Studio
           </p>
         </CardContent>
       </Card>

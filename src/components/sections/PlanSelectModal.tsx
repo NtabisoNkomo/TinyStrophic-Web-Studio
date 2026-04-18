@@ -93,7 +93,7 @@ export function PlanSelectModal({ planName, isOpen, onClose }: PlanSelectModalPr
               </div>
               <h3 className="text-xl font-bold font-outfit">Thank You!</h3>
               <p className="text-muted-foreground text-sm">
-                We&apos;ve received your interest in the <strong>{planName}</strong> plan. A Sola specialist will reach out within 24 hours.
+                We&apos;ve received your interest in the <strong>{planName}</strong> plan. A TinyStrophic specialist will reach out within 24 hours.
               </p>
               <Button onClick={onClose} variant="outline" className="rounded-full mt-2">
                 Close

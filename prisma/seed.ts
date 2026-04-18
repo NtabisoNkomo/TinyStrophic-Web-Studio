@@ -4,11 +4,11 @@ async function main() {
   const prisma = new PrismaClient()
   try {
     const admin = await prisma.user.upsert({
-      where: { email: "admin@solawebstudio.co.za" },
+      where: { email: "admin@tinystrophic.co.za" },
       update: {},
       create: {
-        email: "admin@solawebstudio.co.za",
-        name: "Sola Admin",
+        email: "admin@tinystrophic.co.za",
+        name: "TinyStrophic Admin",
         role: "ADMIN",
       },
     })

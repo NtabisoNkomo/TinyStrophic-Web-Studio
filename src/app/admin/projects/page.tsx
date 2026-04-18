@@ -25,7 +25,7 @@ export default async function AdminProjects() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Sun className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold font-outfit uppercase">Sola Admin</span>
+            <span className="text-xl font-bold font-outfit uppercase">TinyStrophic Admin</span>
           </div>
           <div className="flex items-center space-x-4">
             <Button variant="ghost" className="text-sm" render={<Link href="/admin/dashboard">Dashboard</Link>} />

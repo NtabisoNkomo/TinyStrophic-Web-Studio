@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
               <Sun className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold font-outfit uppercase tracking-tighter">Sola</span>
+              <span className="text-2xl font-bold font-outfit uppercase tracking-tighter">TinyStrophic</span>
             </Link>
             <p className="text-muted-foreground leading-relaxed">
               Crafting premium digital experiences for forward-thinking South African businesses. We build more than websites; we build growth.
@@ -60,7 +60,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>hello@solawebstudio.co.za</span>
+                <span>hello@tinystrophic.co.za</span>
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
@@ -71,7 +71,7 @@ export function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Sola Web Studio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} TinyStrophic Web Studio. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>

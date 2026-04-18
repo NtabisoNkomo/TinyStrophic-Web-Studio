@@ -36,10 +36,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             where: { email: credentials.email as string },
           })
 
-          if (user && credentials.password === "sola-admin-2026") {
+          if (user && credentials.password === "tinystrophic-admin-2026") {
             return {
               id: user.id,
-              name: user.name ?? "Sola Admin",
+              name: user.name ?? "TinyStrophic Admin",
               email: user.email,
               role: user.role ?? "ADMIN",
             }
