@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
@@ -9,18 +8,6 @@ import Link from "next/link"
 export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
   return (
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-      {/* Background with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero-bg.png"
-          alt="Premium Web Design Studio"
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
-      </div>
-
       <div className="container relative z-10 px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-8">
           <motion.div

@@ -4,24 +4,24 @@ import { Layout, Code2, Search, Settings } from "lucide-react"
 
 const services = [
   {
-    title: "Website Design",
-    description: "Stunning, bespoke designs tailored to your brand identity and target audience.",
+    title: "Starter Presence",
+    description: "Get your business online fast with professional, mobile-friendly starter packages.",
     icon: Layout,
   },
   {
-    title: "Website Development",
-    description: "High-performance, responsive websites built with the latest technologies.",
+    title: "Pro Business Sites",
+    description: "Custom UI designs and advanced functionality for growing South African brands.",
     icon: Code2,
   },
   {
-    title: "SEO Optimization",
-    description: "Rank higher on Google and drive organic traffic to your business.",
-    icon: Search,
+    title: "Business Automation",
+    description: "High-end custom web apps and API integrations to automate your business operations.",
+    icon: Settings,
   },
   {
-    title: "Website Maintenance",
-    description: "Ongoing support and updates to keep your site secure and performing.",
-    icon: Settings,
+    title: "Growth SEO",
+    description: "Outcome-driven SEO strategies to increase reach, drive leads, and scale your growth.",
+    icon: Search,
   },
 ]
 

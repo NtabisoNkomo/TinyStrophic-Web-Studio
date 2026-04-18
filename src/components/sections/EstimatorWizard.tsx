@@ -11,32 +11,34 @@ import { submitQuote } from "@/lib/actions/quotes"
 import { toast } from "sonner"
 
 const availableServices = [
-  { id: "web-design", name: "Website Design", basePrice: 3000 },
-  { id: "web-dev", name: "Web Development", basePrice: 8000 },
-  { id: "seo", name: "SEO Optimization", basePrice: 3000 },
-  { id: "maintenance", name: "Maintenance", basePrice: 1500 },
+  { id: "starter-site", name: "Starter Website (1-3 Pages)", basePrice: 3000 },
+  { id: "business-site", name: "Professional Business Site", basePrice: 7000 },
+  { id: "custom-app", name: "Custom Web Application", basePrice: 16000 },
+  { id: "seo-package", name: "Advanced SEO Package", basePrice: 2500 },
 ]
 
 const availableFeatures = [
   { id: "none", name: "No Additions", price: 0 },
-  { id: "pages", name: "Up to 10 Pages", price: 2000 },
-  { id: "blog", name: "Blog / CMS", price: 3500 },
-  { id: "contact", name: "Advanced Forms", price: 1000 },
-  { id: "admin", name: "Custom Admin Panel", price: 6000 },
-  { id: "animation", name: "Premium Animations", price: 4000 },
+  { id: "extra-pages", name: "Additional Pages (Up to 10)", price: 3000 },
+  { id: "cms-blog", name: "Blog / Content Management", price: 3500 },
+  { id: "whatsapp", name: "WhatsApp & Chat Integration", price: 1000 },
+  { id: "admin-panel", name: "Admin Leads Management", price: 5000 },
+  { id: "advanced-anim", name: "Premium Animations", price: 2500 },
+  { id: "booking", name: "Booking & Appointment System", price: 2500 },
+  { id: "payments", name: "Payment Gateway Integration", price: 4000 },
 ]
 
 export function EstimatorWizard({ initialPlan }: { initialPlan?: string | null }) {
   // Map pricing plans to pre-selected services and features
   const planServiceMap: Record<string, string[]> = {
-    Starter: ["web-design"],
-    Growth: ["web-design", "web-dev", "seo"],
-    Premium: ["web-design", "web-dev", "seo", "maintenance"],
+    Starter: ["starter-site"],
+    Growth: ["business-site", "seo-package"],
+    Premium: ["custom-app", "seo-package"],
   }
   const planFeatureMap: Record<string, string[]> = {
     Starter: ["none"],
-    Growth: ["pages", "contact"],
-    Premium: ["pages", "blog", "contact", "admin", "animation"],
+    Growth: ["cms-blog", "whatsapp"],
+    Premium: ["extra-pages", "cms-blog", "admin-panel", "payments", "advanced-anim"],
   }
 
   const initialServices = initialPlan ? planServiceMap[initialPlan] || [] : []

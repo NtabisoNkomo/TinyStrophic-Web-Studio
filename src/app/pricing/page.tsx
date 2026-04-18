@@ -9,20 +9,25 @@ import { Check, X } from "lucide-react"
 import { PlanSelectModal } from "@/components/sections/PlanSelectModal"
 
 const features = [
-  "Custom Design",
+  "1–3 Pages",
+  "5–10 Pages",
+  "Unlimited Pages",
   "Mobile Responsive",
-  "SEO Optimization",
+  "Template-Based Design",
+  "Custom UI Design",
   "Contact Form",
-  "CMS Integration",
-  "E-commerce",
+  "CMS / Blog Integration",
+  "WhatsApp / Chat Integration",
+  "Basic SEO Optimization",
+  "Technical SEO & Performance",
+  "Admin Dashboard",
   "Priority Support",
-  "Monthly Maintenance",
 ]
 
 const plans = [
-  { name: "Starter", included: [true, true, true, true, false, false, false, false] },
-  { name: "Growth", included: [true, true, true, true, true, false, true, true] },
-  { name: "Premium", included: [true, true, true, true, true, true, true, true] },
+  { name: "Starter", included: [true, false, false, true, true, false, true, false, false, true, false, false, false] },
+  { name: "Growth", included: [false, true, false, true, false, true, true, true, true, true, true, false, false] },
+  { name: "Premium", included: [false, false, true, true, false, true, true, true, true, true, true, true, true] },
 ]
 
 export default function Pricing() {
@@ -93,22 +98,22 @@ export default function Pricing() {
           <div className="text-center space-y-8 bg-primary/5 p-16 rounded-[3rem]">
             <h2 className="text-3xl font-bold font-outfit">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-5xl mx-auto">
-               <div className="space-y-2">
-                  <h4 className="font-bold text-lg">How long does a project take?</h4>
-                  <p className="text-muted-foreground text-sm">Typically 2-4 weeks for Starter/Growth plans, and 6-8 weeks for Premium builds.</p>
-               </div>
-               <div className="space-y-2">
-                  <h4 className="font-bold text-lg">Do you offer payment plans?</h4>
-                  <p className="text-muted-foreground text-sm">Yes, we usually split payments into 50% upfront and 50% on completion.</p>
-               </div>
-               <div className="space-y-2">
-                  <h4 className="font-bold text-lg">What about website hosting?</h4>
-                  <p className="text-muted-foreground text-sm">We provide managed hosting for R299/month, ensuring your site is always fast and secure.</p>
-               </div>
-               <div className="space-y-2">
-                  <h4 className="font-bold text-lg">Can I update my site later?</h4>
-                  <p className="text-muted-foreground text-sm">Absolutely! All Growth and Premium plans include a CMS for easy self-management.</p>
-               </div>
+                <div className="space-y-2">
+                   <h4 className="font-bold text-lg">How long does a project take?</h4>
+                   <p className="text-muted-foreground text-sm">Typically 7–14 days for Starter and Growth packages. Premium automation projects take 21+ days depending on complexity.</p>
+                </div>
+                <div className="space-y-2">
+                   <h4 className="font-bold text-lg">How many revisions do I get?</h4>
+                   <p className="text-muted-foreground text-sm">We provide 2–3 rounds of revisions for every project to ensure the final result aligns perfectly with your vision.</p>
+                </div>
+                <div className="space-y-2">
+                   <h4 className="font-bold text-lg">What about website hosting?</h4>
+                   <p className="text-muted-foreground text-sm">Hosting and domain are not included in build costs. We offer Managed Hosting & Maintenance starting from R150/month.</p>
+                </div>
+                <div className="space-y-2">
+                   <h4 className="font-bold text-lg">Can I update my site later?</h4>
+                   <p className="text-muted-foreground text-sm">Absolutely! Growth and Premium plans include a CMS (like Sanity or Payload) for easy content management.</p>
+                </div>
             </div>
           </div>
         </div>

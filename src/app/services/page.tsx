@@ -10,13 +10,13 @@ const tiers = [
   {
     name: "Starter",
     price: "R3,000",
-    description: "Perfect for small local businesses and personal brands.",
+    description: "Get your business online fast with a professional presence.",
     features: [
-      "Custom 3-Page Website",
-      "Mobile Responsive Design",
-      "Basic SEO Optimization",
+      "1–3 Custom Pages",
+      "Basic Responsive Design",
       "Contact Form Integration",
-      "1 Month Free Maintenance",
+      "Basic SEO Setup",
+      "Template-Based Design",
       "2 Revision Rounds"
     ],
     cta: "Start Your Project",
@@ -24,32 +24,32 @@ const tiers = [
   },
   {
     name: "Growth",
-    price: "R7,500",
-    description: "Empowering growing businesses specialized needs.",
+    price: "R7,000",
+    description: "Empowering growing businesses with advanced functionality.",
     features: [
-      "Custom 6-Page Website",
-      "Advanced UI/UX Design",
-      "Full SEO Package",
-      "Google Business Setup",
-      "Content Management (CMS)",
-      "3 Months Free Maintenance",
-      "Unlimited Revision Rounds"
+      "5–10 Custom Pages",
+      "Custom UI Design",
+      "Advanced Animations",
+      "CMS / Editable Content",
+      "WhatsApp & Chat Integration",
+      "Performance Optimization",
+      "Blog & Email Marketing"
     ],
     cta: "Scale Your Business",
     popular: true
   },
   {
     name: "Premium",
-    price: "R12,000+",
-    description: "Custom enterprise solutions for high-performance needs.",
+    price: "R16,000+",
+    description: "High-end solutions for business automation and scale.",
     features: [
-      "Unlimited Pages",
-      "E-commerce Functionality",
-      "Custom Web Application",
-      "Advanced SEO & Analytics",
-      "Custom Logo & Branding",
-      "12 Months Free Maintenance",
-      "Priority Support 24/7"
+      "Fully Custom UI/UX Strategy",
+      "Unlimited or High Page Count",
+      "Admin Dashboard & Leads Management",
+      "Advanced API & Payment Integrations",
+      "Technical SEO & Core Web Vitals",
+      "Enhanced Security Setup",
+      "Outcome-Driven Automation"
     ],
     cta: "Go Premium",
     popular: false
@@ -108,10 +108,11 @@ export default function Services() {
                  <h2 className="text-3xl font-bold font-outfit uppercase tracking-tighter">Additional Add-ons</h2>
                  <p className="text-muted-foreground">Tailor your project with our specialized add-on services to maximize your online impact.</p>
                  <ul className="space-y-3">
-                    <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">Managed Hosting</span> <span>R299/mo</span></li>
+                    <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">Hosting & Maintenance</span> <span>R150 – R500/mo</span></li>
+                    <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">SEO & Content Updates</span> <span>R500 – R2,000/mo</span></li>
+                    <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">Booking System Integration</span> <span>R1,500 – R3,000</span></li>
                     <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">Content Writing</span> <span>R500/page</span></li>
-                    <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">Social Media Integration</span> <span>Included</span></li>
-                    <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">Logo Design</span> <span>R1,500</span></li>
+                    <li className="flex justify-between border-b border-border pb-2"><span className="font-bold">Logo & Branding Package</span> <span>R1,500</span></li>
                  </ul>
                </div>
                <div className="p-8 bg-background border border-border rounded-3xl shadow-sm text-center space-y-4">

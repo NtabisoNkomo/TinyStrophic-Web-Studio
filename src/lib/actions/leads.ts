@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { sendAdminNotification } from "@/lib/email"
+import { sendZapierNotification } from "@/lib/webhooks"
 
 export async function submitLead(data: {
   name: string
@@ -34,6 +35,8 @@ export async function submitLead(data: {
        <p><strong>Budget:</strong> ${data.budget || 'Not specified'}</p>
        <p><strong>Message:</strong><br/>${data.message.replace(/\n/g, '<br/>')}</p>`
     )
+    
+    await sendZapierNotification('LEAD', data)
     
     revalidatePath("/admin/dashboard")
     return { success: true, id: lead.id }

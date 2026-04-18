@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Sun, Mail, Phone, MapPin, Globe, MessageCircle, Camera, X } from "lucide-react"
 
 export function Footer() {
@@ -8,8 +9,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
-              <Sun className="h-8 w-8 text-primary" />
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-primary/20 bg-white transition-transform group-hover:scale-110">
+                <Image
+                  src="/logo.png"
+                  alt="TinyStrophic Logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <span className="text-2xl font-bold font-outfit uppercase tracking-tighter">TinyStrophic</span>
             </Link>
             <p className="text-muted-foreground leading-relaxed">
