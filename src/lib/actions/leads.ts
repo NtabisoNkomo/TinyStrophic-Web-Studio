@@ -37,9 +37,13 @@ export async function submitLead(data: {
     
     revalidatePath("/admin/dashboard")
     return { success: true, id: lead.id }
-  } catch (error) {
+  } catch (error: any) {
     console.error("Failed to submit lead:", error)
-    return { success: false, error: "Something went wrong. Please try again." }
+    // Return specific error for debugging if needed, or keep it generic but log specifically
+    return { 
+      success: false, 
+      error: `Submission failed: ${error.message || "Unknown error"}. Please check your connection and try again.` 
+    }
   }
 }
 
