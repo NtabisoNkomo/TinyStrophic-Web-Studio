@@ -7,6 +7,7 @@ import { sendAdminNotification } from "@/lib/email"
 export async function submitLead(data: {
   name: string
   email: string
+  phone?: string
   businessName: string
   budget?: string
   message: string
@@ -16,6 +17,7 @@ export async function submitLead(data: {
       data: {
         name: data.name,
         email: data.email,
+        phone: data.phone,
         businessName: data.businessName,
         budget: data.budget,
         message: data.message,
@@ -27,6 +29,7 @@ export async function submitLead(data: {
       `New Lead: ${data.name} from ${data.businessName}`,
       `<p><strong>Name:</strong> ${data.name}</p>
        <p><strong>Email:</strong> ${data.email}</p>
+       <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
        <p><strong>Business:</strong> ${data.businessName}</p>
        <p><strong>Budget:</strong> ${data.budget || 'Not specified'}</p>
        <p><strong>Message:</strong><br/>${data.message.replace(/\n/g, '<br/>')}</p>`
