@@ -32,6 +32,16 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         try {
           if (!credentials?.email || !credentials?.password) return null
 
+          // Hardcoded Admin Check
+          if (credentials.email === "admin@tinystrophic.co.za" && credentials.password === "tinystrophic-admin-2026") {
+            return {
+              id: "admin-id",
+              name: "TinyStrophic Admin",
+              email: "admin@tinystrophic.co.za",
+              role: "ADMIN",
+            }
+          }
+
           const user = await prisma.user.findUnique({
             where: { email: credentials.email as string },
           })

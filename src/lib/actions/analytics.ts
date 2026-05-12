@@ -22,22 +22,31 @@ export async function logVisit() {
 }
 
 export async function getDashboardStats() {
-  const [leadsCount, quotesCount, visitorsCount, activeProjectsCount] = await Promise.all([
-    prisma.lead.count(),
-    prisma.quote.count(),
-    prisma.visitor.count(),
-    prisma.project.count(),
-  ])
+  try {
+    const [leadsCount, quotesCount, visitorsCount, activeProjectsCount] = await Promise.all([
+      prisma.lead.count(),
+      prisma.quote.count(),
+      prisma.visitor.count(),
+      prisma.project.count(),
+    ])
 
-  let conversionRate = 0
-  if (visitorsCount > 0) {
-    // Conversion rate = (Leads + Quotes) / Visitors
-    conversionRate = parseFloat((((leadsCount + quotesCount) / visitorsCount) * 100).toFixed(1))
-  }
+    let conversionRate = 0
+    if (visitorsCount > 0) {
+      // Conversion rate = (Leads + Quotes) / Visitors
+      conversionRate = parseFloat((((leadsCount + quotesCount) / visitorsCount) * 100).toFixed(1))
+    }
 
-  return {
-    conversionRate,
-    activeProjects: activeProjectsCount,
-    totalAudits: quotesCount // Total quote requests
+    return {
+      conversionRate,
+      activeProjects: activeProjectsCount,
+      totalAudits: quotesCount // Total quote requests
+    }
+  } catch (error) {
+    console.error("Error fetching dashboard stats:", error)
+    return {
+      conversionRate: 0,
+      activeProjects: 0,
+      totalAudits: 0
+    }
   }
 }
