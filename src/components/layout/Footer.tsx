@@ -42,10 +42,10 @@ export function Footer() {
           <div>
             <h3 className="font-outfit font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Website Design</Link></li>
-              <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Custom Development</Link></li>
-              <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">SEO Optimization</Link></li>
-              <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Maintenance & Support</Link></li>
+              <li><Link href="/services#pricing-plans" className="text-muted-foreground hover:text-primary transition-colors">Website Design</Link></li>
+              <li><Link href="/services#addons" className="text-muted-foreground hover:text-primary transition-colors">Custom Development</Link></li>
+              <li><Link href="/services#addons" className="text-muted-foreground hover:text-primary transition-colors">SEO Optimization</Link></li>
+              <li><Link href="/services#addons" className="text-muted-foreground hover:text-primary transition-colors">Maintenance & Support</Link></li>
             </ul>
           </div>
 

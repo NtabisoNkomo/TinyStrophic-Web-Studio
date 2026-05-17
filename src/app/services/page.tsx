@@ -67,7 +67,7 @@ export default function Services() {
             subtitle="Transparent pricing and results-driven solutions for every stage of your business growth."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 pt-8">
+          <div id="pricing-plans" className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 pt-8">
             {tiers.map((tier, i) => (
               <Card key={i} className={`relative border-border/50 flex flex-col overflow-visible ${tier.popular ? "border-primary shadow-lg scale-105" : ""}`}>
                 {tier.popular && (
@@ -102,7 +102,7 @@ export default function Services() {
             ))}
           </div>
 
-          <div className="bg-accent/5 rounded-[3rem] p-12 md:p-24">
+          <div id="addons" className="bg-accent/5 rounded-[3rem] p-12 md:p-24">
              <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                <div className="space-y-6">
                  <h2 className="text-3xl font-bold font-outfit uppercase tracking-tighter">Additional Add-ons</h2>
