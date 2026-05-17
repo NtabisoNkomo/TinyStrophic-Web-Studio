@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "TinyStrophic Web Studios | Premium South African Web Agency",
   description: "TinyStrophic Web Studios helps South African businesses establish a powerful online presence with premium web design and development services.",
   authors: [{ name: "Ntabiso Sola Nkomo" }],
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +37,11 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+      </head>
       <body 
         className="min-h-full flex flex-col bg-cover bg-center bg-no-repeat bg-fixed bg-black"
         style={{ backgroundImage: "url('/pricing_hero_bg.png')" }}
