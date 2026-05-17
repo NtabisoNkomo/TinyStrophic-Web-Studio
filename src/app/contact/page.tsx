@@ -145,9 +145,7 @@ function ContactContent() {
           ].map((v, i) => (
             <Card key={i} className="border-border/50 bg-background/50 backdrop-blur hover:border-primary/50 transition-all duration-300 group">
               <CardContent className="p-8 flex flex-col items-center text-center space-y-4">
-                <div className="p-3 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <v.icon className="h-8 w-8 text-primary" />
-                </div>
+                <v.icon className="h-10 w-10 text-primary" />
                 <h4 className="text-xl font-bold font-outfit">{v.title}</h4>
                 <p className="text-muted-foreground">{v.value}</p>
                 {v.href ? (
