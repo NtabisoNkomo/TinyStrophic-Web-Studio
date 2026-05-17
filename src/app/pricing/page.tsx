@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { SectionHeader } from "@/components/ui/section-header"
@@ -32,15 +32,6 @@ const plans = [
 
 export default function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null)
-
-  useEffect(() => {
-    // Disable global background image strictly on the pricing page
-    const originalBg = document.body.style.backgroundImage
-    document.body.style.backgroundImage = "none"
-    return () => {
-      document.body.style.backgroundImage = originalBg
-    }
-  }, [])
 
   return (
     <div className="flex flex-col min-h-screen">
