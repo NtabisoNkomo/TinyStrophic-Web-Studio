@@ -24,7 +24,7 @@ export default function About() {
                 We bridge that gap by providing premium, bespoke web solutions at accessible price points. Our goal is to help you establish trust, showcase your excellence, and ultimately grow your business in the competitive South African landscape.
               </p>
             </div>
-            <div className="relative aspect-video rounded-3xl bg-accent overflow-hidden border border-primary/20 flex items-center justify-center p-12">
+            <div className="relative aspect-video rounded-[2rem] bg-background/50 backdrop-blur overflow-hidden border border-border/50 flex items-center justify-center p-12 shadow-lg">
                <Sun className="h-24 w-24 text-primary opacity-20" />
                <p className="absolute bottom-8 left-8 right-8 text-sm font-medium italic opacity-60">
                  &quot;Excellence is not an act, but a habit. We make excellence the standard for every project we touch.&quot;
@@ -38,7 +38,7 @@ export default function About() {
               { title: "Growth", icon: Target, desc: "Everything we build is designed to drive results and business growth." },
               { title: "Community", icon: Users, desc: "We are proud South Africans supporting the local economy." }
             ].map((v, i) => (
-              <div key={i} className="p-8 rounded-2xl border border-border bg-accent/5 space-y-4">
+              <div key={i} className="p-8 rounded-[2rem] border border-border/50 bg-background/50 backdrop-blur hover:border-primary/50 transition-all duration-300 space-y-4 group">
                 <v.icon className="h-10 w-10 text-primary" />
                 <h4 className="text-xl font-bold font-outfit">{v.title}</h4>
                 <p className="text-muted-foreground">
@@ -48,7 +48,7 @@ export default function About() {
             ))}
           </div>
 
-          <div className="bg-primary/5 rounded-[3rem] p-12 md:p-24 text-center space-y-8">
+          <div className="bg-background/50 backdrop-blur border border-border/50 rounded-[3rem] p-12 md:p-24 text-center space-y-8 shadow-lg">
             <SectionHeader
               title="Meet the Founder"
               subtitle="Driven by a passion for design and local entrepreneurship."

@@ -69,70 +69,72 @@ function ContactContent() {
       <div className="space-y-8">
         <h3 className="text-3xl font-bold font-outfit">Send us a message</h3>
         
-        {isSuccess ? (
-          <div className="p-10 rounded-3xl bg-primary/10 border border-primary/20 text-center space-y-4">
-            <div className="mx-auto w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-              <Send className="h-8 w-8 text-primary" />
+        <Card className="border-border/50 bg-background/50 backdrop-blur rounded-[2rem] p-8 md:p-10 shadow-lg">
+          {isSuccess ? (
+            <div className="text-center space-y-4">
+              <div className="mx-auto w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+                <Send className="h-8 w-8 text-primary" />
+              </div>
+              <h4 className="text-2xl font-bold font-outfit">Message Received!</h4>
+              <p className="text-muted-foreground">Thank you for reaching out. A TinyStrophic specialist will contact you within 24 hours.</p>
+              <Button onClick={() => setIsSuccess(false)} variant="outline" className="rounded-full">Send Another Message</Button>
             </div>
-            <h4 className="text-2xl font-bold font-outfit">Message Received!</h4>
-            <p className="text-muted-foreground">Thank you for reaching out. A TinyStrophic specialist will contact you within 24 hours.</p>
-            <Button onClick={() => setIsSuccess(false)} variant="outline" className="rounded-full">Send Another Message</Button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {error && (
-              <div className="p-4 bg-destructive/10 border border-destructive/20 text-destructive text-sm rounded-xl">
-                {error}
+          ) : (
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {error && (
+                <div className="p-4 bg-destructive/10 border border-destructive/20 text-destructive text-sm rounded-xl">
+                  {error}
+                </div>
+              )}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-widest opacity-60">Full Name</label>
+                  <Input {...register("name")} placeholder="John Doe" className="bg-accent/5 border-border/50" />
+                  {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-widest opacity-60">Email Address</label>
+                  <Input {...register("email")} placeholder="john@example.com" className="bg-accent/5 border-border/50" />
+                  {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
+                </div>
               </div>
-            )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-widest opacity-60">Phone Number</label>
+                  <Input {...register("phone")} placeholder="+27 82 000 0000" className="bg-accent/5 border-border/50" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-widest opacity-60">Business Name</label>
+                  <Input {...register("businessName")} placeholder="Acme Corp" className="bg-accent/5 border-border/50" />
+                  {errors.businessName && <p className="text-xs text-destructive">{errors.businessName.message}</p>}
+                </div>
+              </div>
+              <div className="grid grid-cols-1 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-widest opacity-60">Budget Range</label>
+                  <Input {...register("budget")} placeholder="e.g. R5,000 - R10,000" className="bg-accent/5 border-border/50" />
+                </div>
+              </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-60">Full Name</label>
-                <Input {...register("name")} placeholder="John Doe" className="bg-accent/5 border-border/50" />
-                {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
+                <label className="text-sm font-bold uppercase tracking-widest opacity-60">Your Message</label>
+                <Textarea 
+                  {...register("message")} 
+                  placeholder="Tell us about your project goals..." 
+                  className="min-h-[150px] bg-accent/5 border-border/50" 
+                />
+                {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-60">Email Address</label>
-                <Input {...register("email")} placeholder="john@example.com" className="bg-accent/5 border-border/50" />
-                {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-60">Phone Number</label>
-                <Input {...register("phone")} placeholder="+27 82 000 0000" className="bg-accent/5 border-border/50" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-60">Business Name</label>
-                <Input {...register("businessName")} placeholder="Acme Corp" className="bg-accent/5 border-border/50" />
-                {errors.businessName && <p className="text-xs text-destructive">{errors.businessName.message}</p>}
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest opacity-60">Budget Range</label>
-                <Input {...register("budget")} placeholder="e.g. R5,000 - R10,000" className="bg-accent/5 border-border/50" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold uppercase tracking-widest opacity-60">Your Message</label>
-              <Textarea 
-                {...register("message")} 
-                placeholder="Tell us about your project goals..." 
-                className="min-h-[150px] bg-accent/5 border-border/50" 
-              />
-              {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
-            </div>
-            <Button 
-              type="submit" 
-              disabled={isSubmitting}
-              className="w-full sm:w-auto bg-primary text-primary-foreground rounded-full px-12 py-6 font-bold text-lg"
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-              <Send className="ml-2 h-5 w-5" />
-            </Button>
-          </form>
-        )}
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full sm:w-auto bg-primary text-primary-foreground rounded-full px-12 py-6 font-bold text-lg"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+                <Send className="ml-2 h-5 w-5" />
+              </Button>
+            </form>
+          )}
+        </Card>
       </div>
 
       {/* Contact Info & WhatsApp */}
