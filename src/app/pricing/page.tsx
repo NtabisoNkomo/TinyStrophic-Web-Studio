@@ -44,7 +44,7 @@ export default function Pricing() {
           />
 
           <div className="overflow-x-auto mb-24">
-            <table className="w-full text-left border-collapse border border-border bg-accent/5 rounded-3xl overflow-hidden">
+            <table className="w-full text-left border-collapse border border-border bg-black rounded-3xl overflow-hidden">
               <thead>
                 <tr className="border-b border-border bg-accent/10">
                   <th className="p-6 text-xl font-bold font-outfit">Feature</th>
