@@ -170,7 +170,7 @@ function ContactContent() {
           <p className="opacity-90 leading-relaxed text-lg">
             Need a response within minutes? Reach out on WhatsApp. We&apos;re online during business hours (GMT+2).
           </p>
-          <Button className="w-full bg-white text-primary hover:bg-white/90 rounded-full py-6 font-bold text-lg" render={<a href="https://wa.me/27759777983" target="_blank" rel="noopener noreferrer" />}>
+          <Button className="w-full h-auto whitespace-normal bg-white text-black hover:bg-white/90 rounded-full py-4 px-6 font-bold text-base sm:text-lg" render={<a href="https://wa.me/27759777983" target="_blank" rel="noopener noreferrer" />}>
             Message TinyStrophic Web Studios on WhatsApp
           </Button>
         </div>

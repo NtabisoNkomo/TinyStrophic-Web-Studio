@@ -7,7 +7,6 @@ import Image from "next/image"
 import { Menu, Crown, Sun } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
 import {
   Sheet,
   SheetContent,
@@ -59,7 +58,6 @@ export function Navbar() {
               {item.name}
             </Link>
           ))}
-          <ModeToggle />
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6" render={<Link href="/contact" />}>
             Get Started
           </Button>
@@ -67,7 +65,6 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="flex items-center space-x-4 md:hidden">
-          <ModeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger
               render={
