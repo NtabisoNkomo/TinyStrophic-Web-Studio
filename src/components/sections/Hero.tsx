@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 
 export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
+  return (
     <section 
       className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/pricing_hero_bg.png')" }}
