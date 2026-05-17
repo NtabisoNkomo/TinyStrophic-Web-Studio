@@ -77,30 +77,48 @@ export function Navbar() {
                 </Button>
               }
             />
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetHeader>
-                <SheetTitle className="text-left font-outfit text-2xl font-bold">
-                  TINYSTROPHIC<span className="text-primary">.</span>
-                </SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col space-y-4 mt-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "text-lg font-medium transition-colors hover:text-primary",
-                      pathname === item.href ? "text-primary" : "text-foreground"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <Button className="w-full mt-4 bg-primary text-primary-foreground rounded-full" render={<Link href="/contact" onClick={() => setIsOpen(false)} />}>
+            <SheetContent side="right" className="w-full sm:max-w-md bg-background/95 border-l border-border/40 backdrop-blur-xl p-8 flex flex-col justify-between h-full font-outfit">
+              <div>
+                <SheetHeader className="pb-6 border-b border-border/40">
+                  <SheetTitle className="text-left font-outfit text-2xl font-bold tracking-tighter uppercase">
+                    TINYSTROPHIC<span className="text-primary">.</span>
+                  </SheetTitle>
+                </SheetHeader>
+                
+                <nav className="flex flex-col space-y-6 mt-12">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "text-3xl font-bold tracking-tight transition-all duration-300 hover:text-primary flex items-center justify-between group",
+                        pathname === item.href ? "text-primary pl-2" : "text-foreground/90"
+                      )}
+                    >
+                      <span>{item.name}</span>
+                      {pathname === item.href ? (
+                        <span className="h-2 w-2 rounded-full bg-primary" />
+                      ) : (
+                        <span className="h-2 w-2 rounded-full bg-primary scale-0 group-hover:scale-100 transition-transform duration-300" />
+                      )}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+
+              <div className="space-y-8 mt-auto">
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full py-6 font-bold text-lg shadow-lg shadow-primary/20" render={<Link href="/contact" onClick={() => setIsOpen(false)} />}>
                   Get Started
                 </Button>
-              </nav>
+
+                {/* Footer Info inside Menu */}
+                <div className="pt-6 border-t border-border/40 space-y-3 text-sm text-muted-foreground">
+                  <p className="font-semibold text-foreground">TinyStrophic Web Studios</p>
+                  <p>tinystrophic@gmail.com</p>
+                  <p>075 977 7983</p>
+                </div>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
