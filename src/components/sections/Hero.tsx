@@ -6,8 +6,12 @@ import { ArrowRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 
 export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
-  return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+    <section 
+      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/pricing_hero_bg.png')" }}
+    >
+      {/* Dark Overlay for Text Legibility */}
+      <div className="absolute inset-0 bg-black/75 z-0" />
       <div className="container relative z-10 px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-8">
           <motion.div
@@ -35,7 +39,7 @@ export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-[800px] text-muted-foreground md:text-xl lg:text-2xl"
           >
-            TinyStrophic Web Studio creates high-converting, premium digital experiences for South African small-to-medium businesses. Establish your presence, engage your audience, and scale your growth.
+            TinyStrophic Web Studios creates high-converting, premium digital experiences for South African small-to-medium businesses. Establish your presence, engage your audience, and scale your growth.
           </motion.p>
 
           <motion.div
@@ -61,7 +65,7 @@ export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
             className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-12 mt-12 border-t border-border/50 w-full max-w-4xl"
           >
             <div className="flex flex-col items-center">
-              <span className="text-3xl font-bold text-primary">{Math.max(5, projectsCount)}+</span>
+              <span className="text-3xl font-bold text-primary">3</span>
               <span className="text-sm text-muted-foreground uppercase tracking-widest">Projects Done</span>
             </div>
             <div className="flex flex-col items-center">

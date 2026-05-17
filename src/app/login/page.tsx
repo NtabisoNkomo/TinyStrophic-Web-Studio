@@ -105,7 +105,7 @@ export default function LoginPage() {
           <p className="mt-8 text-center text-xs text-muted-foreground">
             Protected Console. Authorized access only.
             <br />
-            © 2024 TinyStrophic Web Studio
+            © 2024 TinyStrophic Web Studios
           </p>
         </CardContent>
       </Card>

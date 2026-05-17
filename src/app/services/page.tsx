@@ -67,9 +67,9 @@ export default function Services() {
             subtitle="Transparent pricing and results-driven solutions for every stage of your business growth."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 pt-8">
             {tiers.map((tier, i) => (
-              <Card key={i} className={`relative border-border/50 flex flex-col ${tier.popular ? "border-primary shadow-lg scale-105" : ""}`}>
+              <Card key={i} className={`relative border-border/50 flex flex-col overflow-visible ${tier.popular ? "border-primary shadow-lg scale-105" : ""}`}>
                 {tier.popular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full">
                     Most Popular

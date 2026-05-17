@@ -139,8 +139,8 @@ function ContactContent() {
       <div className="space-y-12">
         <div className="grid grid-cols-1 gap-6">
           {[
-            { title: "Direct Email", value: "hello@tinystrophic.co.za", icon: Mail },
-            { title: "Phone Support", value: "+27 12 345 6789", icon: Phone },
+            { title: "Direct Email", value: "tinystrophic@gmail.com", icon: Mail },
+            { title: "Phone Support", value: "075 977 7983", icon: Phone },
             { title: "Main Studio", value: "Johannesburg, South Africa", icon: MapPin },
           ].map((item, i) => (
             <Card key={i} className="border-border/50 bg-accent/5 overflow-hidden">
@@ -163,15 +163,15 @@ function ContactContent() {
               <MessageSquare className="h-8 w-8" />
               <h3 className="text-2xl font-bold font-outfit">Quick Chat</h3>
             </div>
-            <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest w-fit">
-              Coming Soon
+            <span className="bg-green-500/20 text-green-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest w-fit">
+              Online
             </span>
           </div>
           <p className="opacity-90 leading-relaxed text-lg">
             Need a response within minutes? Reach out on WhatsApp. We&apos;re online during business hours (GMT+2).
           </p>
-          <Button disabled className="w-full bg-white opacity-50 text-primary cursor-not-allowed rounded-full py-6 font-bold text-lg">
-            Chat on WhatsApp
+          <Button className="w-full bg-white text-primary hover:bg-white/90 rounded-full py-6 font-bold text-lg" render={<a href="https://wa.me/27759777983" target="_blank" rel="noopener noreferrer" />}>
+            Message TinyStrophic Web Studios on WhatsApp
           </Button>
         </div>
       </div>

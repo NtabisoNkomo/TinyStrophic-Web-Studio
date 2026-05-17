@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TinyStrophic Web Studio | Premium South African Web Agency",
-  description: "TinyStrophic Web Studio helps South African businesses establish a powerful online presence with premium web design and development services.",
+  title: "TinyStrophic Web Studios | Premium South African Web Agency",
+  description: "TinyStrophic Web Studios helps South African businesses establish a powerful online presence with premium web design and development services.",
   authors: [{ name: "Ntabiso Sola Nkomo" }],
 };
 

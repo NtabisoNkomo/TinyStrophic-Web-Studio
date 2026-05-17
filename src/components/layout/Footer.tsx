@@ -68,18 +68,18 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>hello@tinystrophic.co.za</span>
+                <span>tinystrophic@gmail.com</span>
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span>+27 12 345 6789</span>
+                <span>075 977 7983</span>
               </li>
             </ul>
           </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} TinyStrophic Web Studio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} TinyStrophic Web Studios. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>

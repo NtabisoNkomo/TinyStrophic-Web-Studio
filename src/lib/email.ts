@@ -16,7 +16,7 @@ export async function sendAdminNotification(subject: string, htmlBody: string) {
     );
 
     const info = await transporter.sendMail({
-      from: process.env.EMAIL_FROM || '"TinyStrophic Web Studio" <noreply@tinystrophic.co.za>',
+      from: process.env.EMAIL_FROM || '"TinyStrophic Web Studios" <noreply@tinystrophic.co.za>',
       to: process.env.ADMIN_EMAIL || 'admin@tinystrophic.co.za', // Admin's email
       subject: subject,
       html: htmlBody,
