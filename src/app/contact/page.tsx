@@ -137,21 +137,26 @@ function ContactContent() {
 
       {/* Contact Info & WhatsApp */}
       <div className="space-y-12">
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: "Direct Email", value: "tinystrophic@gmail.com", icon: Mail },
-            { title: "Phone Support", value: "075 977 7983", icon: Phone },
-            { title: "Main Studio", value: "Johannesburg, South Africa", icon: MapPin },
-          ].map((item, i) => (
-            <Card key={i} className="border-border/50 bg-accent/5 overflow-hidden">
-              <CardContent className="p-6 flex items-center space-x-6">
-                 <div className="p-3 bg-primary/10 rounded-xl">
-                   <item.icon className="h-6 w-6 text-primary" />
-                 </div>
-                 <div>
-                   <h4 className="text-xs font-bold uppercase tracking-widest opacity-60">{item.title}</h4>
-                   <p className="text-lg font-bold font-outfit">{item.value}</p>
-                 </div>
+            { title: "Email Us", icon: Mail, value: "tinystrophic@gmail.com", href: "mailto:tinystrophic@gmail.com", action: "Send an email" },
+            { title: "Call Us", icon: Phone, value: "075 977 7983", href: "tel:0759777983", action: "Call support" },
+            { title: "Our Location", icon: MapPin, value: "Johannesburg, South Africa", action: "View on map" }
+          ].map((v, i) => (
+            <Card key={i} className="border-border/50 bg-background/50 backdrop-blur hover:border-primary/50 transition-all duration-300 group">
+              <CardContent className="p-8 flex flex-col items-center text-center space-y-4">
+                <div className="p-3 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <v.icon className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold font-outfit">{v.title}</h4>
+                <p className="text-muted-foreground">{v.value}</p>
+                {v.href ? (
+                  <a href={v.href} className="text-sm font-semibold text-primary hover:underline">
+                    {v.action}
+                  </a>
+                ) : (
+                  <span className="text-sm text-muted-foreground">{v.action}</span>
+                )}
               </CardContent>
             </Card>
           ))}
