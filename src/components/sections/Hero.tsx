@@ -7,10 +7,7 @@ import Link from "next/link"
 
 export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
   return (
-    <section 
-      className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/pricing_hero_bg.png')" }}
-    >
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
       {/* Dark Overlay for Text Legibility */}
       <div className="absolute inset-0 bg-black/75 z-0" />
       <div className="container relative z-10 px-4 md:px-6">

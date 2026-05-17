@@ -32,7 +32,10 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body 
+        className="min-h-full flex flex-col bg-cover bg-center bg-no-repeat bg-fixed bg-black"
+        style={{ backgroundImage: "url('/pricing_hero_bg.png')" }}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
