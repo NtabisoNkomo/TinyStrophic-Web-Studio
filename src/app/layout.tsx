@@ -21,9 +21,10 @@ export const metadata: Metadata = {
   authors: [{ name: "Ntabiso Sola Nkomo" }],
   icons: {
     icon: [
+      { url: "/favicon.ico" },
       { url: "/favicon.png", type: "image/png", sizes: "144x144" },
     ],
-    shortcut: "/favicon.png",
+    shortcut: "/favicon.ico",
     apple: { url: "/logo.png", type: "image/png" },
   },
 };
