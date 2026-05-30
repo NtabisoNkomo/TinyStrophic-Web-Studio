@@ -13,7 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { submitLead } from "@/lib/actions/leads"
 import { useState, Suspense } from "react"
-import { useSearchParams } from "next/navigation"
+import { useSearchParams, useRouter } from "next/navigation"
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -27,6 +27,7 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>
 
 function ContactContent() {
+  const router = useRouter()
   const searchParams = useSearchParams()
   const plan = searchParams.get("plan")
 
@@ -53,8 +54,7 @@ function ContactContent() {
     try {
       const result = await submitLead(data)
       if (result.success) {
-        setIsSuccess(true)
-        reset()
+        router.push("/contact/thank-you")
       } else {
         setError(result.error || "Failed to send message")
       }
