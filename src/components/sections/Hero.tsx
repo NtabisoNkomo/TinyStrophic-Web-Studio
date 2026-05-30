@@ -55,26 +55,7 @@ export function Hero({ projectsCount = 5 }: { projectsCount?: number }) {
             </Button>
           </motion.div>
 
-          {/* Stats/Trust Bar */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-12 mt-12 border-t border-border/50 w-full max-w-4xl"
-          >
-            <div className="flex flex-col items-center">
-              <span className="text-3xl font-bold text-primary">3</span>
-              <span className="text-sm text-muted-foreground uppercase tracking-widest">Projects Done</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-3xl font-bold text-primary">99%</span>
-              <span className="text-sm text-muted-foreground uppercase tracking-widest">Client Success</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-3xl font-bold text-primary">24/7</span>
-              <span className="text-sm text-muted-foreground uppercase tracking-widest">Expert Support</span>
-            </div>
-          </motion.div>
+
         </div>
       </div>
     </section>

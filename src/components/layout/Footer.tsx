@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Sun, Mail, Phone, MapPin, Globe, MessageCircle, Camera, X } from "lucide-react"
+import { Sun, Mail, Phone, MapPin, MessageCircle, Camera, X } from "lucide-react"
 
 export function Footer() {
   return (
@@ -24,15 +24,34 @@ export function Footer() {
               Crafting premium digital experiences for forward-thinking South African businesses. We build more than websites; we build growth.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Globe className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <a 
+                href="https://www.tiktok.com/@tinystrophic.web.s?is_from_webapp=1&sender_device=pc" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                aria-label="TikTok"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
+              </a>
+              <a 
+                href="https://wa.me/27759777983" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
                 <MessageCircle className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              </a>
+              <a 
+                href="https://www.instagram.com/tinystrophic_web_studios/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                aria-label="Instagram"
+              >
                 <Camera className="h-5 w-5" />
-              </Link>
+              </a>
               <Link href="#" className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                 <X className="h-5 w-5" />
               </Link>
