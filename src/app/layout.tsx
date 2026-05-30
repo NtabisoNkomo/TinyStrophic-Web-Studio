@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { VisitorLogger } from "@/components/VisitorLogger";
 import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -45,6 +46,20 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-cover bg-center bg-no-repeat bg-fixed bg-black"
         style={{ backgroundImage: "url('/pricing_hero_bg.png')" }}
       >
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18190127581"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18190127581');
+          `}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
