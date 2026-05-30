@@ -26,15 +26,51 @@ export async function submitLead(data: {
       },
     })
     
-    await sendAdminNotification(
-      `New Lead: ${data.name} from ${data.businessName}`,
-      `<p><strong>Name:</strong> ${data.name}</p>
-       <p><strong>Email:</strong> ${data.email}</p>
-       <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-       <p><strong>Business:</strong> ${data.businessName}</p>
-       <p><strong>Budget:</strong> ${data.budget || 'Not specified'}</p>
-       <p><strong>Message:</strong><br/>${data.message.replace(/\n/g, '<br/>')}</p>`
-    )
+    let emailSent = false;
+    
+    if (process.env.FORMSPREE_FORM_ID) {
+      try {
+        const response = await fetch(`https://formspree.io/f/${process.env.FORMSPREE_FORM_ID}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            phone: data.phone || "Not provided",
+            businessName: data.businessName,
+            budget: data.budget || "Not specified",
+            message: data.message,
+            _subject: `New Lead: ${data.name} from ${data.businessName}`
+          })
+        });
+
+        if (response.ok) {
+          emailSent = true;
+          console.log("Lead forwarded to Formspree successfully.");
+        } else {
+          const errText = await response.text();
+          console.error("Formspree submission returned an error status:", response.status, errText);
+        }
+      } catch (err) {
+        console.error("Failed to forward lead to Formspree:", err);
+      }
+    }
+
+    if (!emailSent) {
+      console.log("Falling back to SMTP admin notification...");
+      await sendAdminNotification(
+        `New Lead: ${data.name} from ${data.businessName}`,
+        `<p><strong>Name:</strong> ${data.name}</p>
+         <p><strong>Email:</strong> ${data.email}</p>
+         <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
+         <p><strong>Business:</strong> ${data.businessName}</p>
+         <p><strong>Budget:</strong> ${data.budget || 'Not specified'}</p>
+         <p><strong>Message:</strong><br/>${data.message.replace(/\n/g, '<br/>')}</p>`
+      );
+    }
     
 
     
